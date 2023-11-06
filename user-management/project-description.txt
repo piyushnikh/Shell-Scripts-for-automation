@@ -1,0 +1,15 @@
+Goal :-
+
+To write a script for new user setup which follows compliance guidelines.
+
+Scenario :-
+
+The SOC team of a company wants to design a script which allows the application teams to create or update the service accounts.
+
+Below are the three mandatory requirements for which script is written.
+
+1) User creation & inital password set.
+
+2) Script has the password change days & warning days logic. 
+
+3) To change the password for such expired accounts.

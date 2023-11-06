@@ -1,0 +1,49 @@
+Steps To configure MySQL DB on RHEL 9 :-
+
+1) Go to below link & download mysql80-community-release-el9-4.noarch.rpm version on server.
+
+Link :- https://dev.mysql.com/downloads/repo/yum/
+version :- mysql80-community-release-el9-4.noarch.rpm
+
+wget https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbU9MQk0xWFFxaGdwSV96dzZQUW80WmdtM0hNUXxBQ3Jtc0tsZ2tXVHZ0X1hUV2NubFN0bTkzbXZsbkJLa3hhTXdJOWQwWFJERk9BckloTVlfZW5pRVdoZkFrQklwNzRKSndQTHd1R3RHaWl5SEpwUnN0NjVfY3p4RnMzaWpyT2xwR3Fza0VJWXVlQ1RTMjQtNTE1OA&q=https%3A%2F%2Frepo.mysql.com%2Fmysql80-community-release-el9-1.noarch.rpm&v=Nl4oOK_t7Rc
+
+2) Install as an .rpm packages, sudo dnf localinstall mysql80-community-release-el9-1.noarch.rpm
+
+3) checking the repolist components, dnf repolist enabled | grep "mysql.*-community.*"
+
+4) Install the mysql-community-server,
+
+sudo dnf install mysql-community-server
+
+5) sudo systemctl status mysqld (Initially service will be inactive/dead)
+
+6) For enabling & starting mysqld, sudo systemctl enable mysqld;sudo systemctl start mysqld
+
+7) Check version by mysql --version
+
+8) grep 'temporary password' /var/log/mysqld.log, temporary password be should be like below.
+
+._Dggu=YO5f-
+ji<c,8Mf!5t9
+
+9) After copying above password login to mysql with same. You will be asked to reset password for default account.
+Run the below commands.
+
+sudo mysql_secure_installation
+sudo mysql -uroot -pH2e4m6A3NT@
+
+Once you login grant all prvilages to user,
+
+GRANT ALL PRIVILEGES ON *.* to 'root'@'localhost' WITH GRANT OPTION;
+
+We are all set using MySQL DB.
+
+10) Refer to below github repo where to setup sample databases.
+
+git clone https://github.com/datacharmer/test_db.git
+
+cd test_db
+
+sudo mysql -uroot -pH2e4m6A3NT@ < employees.sql
+
+sudo mysql -uroot -pH2e4m6A3NT@ -t < test_employees_sha.sql
