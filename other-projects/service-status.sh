@@ -23,7 +23,7 @@ else
 		sudo systemctl start "$service"
   
 		status=$(sudo systemctl status "$service" | awk 'NR==5 {print}' | cut -d ":" -f 2 | cut -d " " -f 2)
-  
-    echo "$service is $status"
-    
+
+                echo ""$service" is "$status""
+
 fi
