@@ -11,11 +11,11 @@ INPUT_PATH="$1"
 
 if [ -e "$INPUT_PATH" ]; then
 
-FILE_COUNT="$(ls -l "$INPUT_PATH" | awk "NR!=1" | cut -d " " -f 1 | cut -b 1 | grep "-"| wc -l)"
+FILE_COUNT="$(ls -l "$INPUT_PATH" | grep "^-"| wc -l)"
 
-DIRECTORY_COUNT="$(ls -l "$INPUT_PATH" | awk "NR!=1" | cut -d " " -f 1 | cut -b 1 | grep "d" | wc -l)"
+DIRECTORY_COUNT="$(ls -l "$INPUT_PATH" | grep "^d" | wc -l)"
 
-LINKFILE_COUNT="$(ls -l "$INPUT_PATH" | awk "NR!=1" | cut -d " " -f 1 | cut -b 1 | grep "l" | wc -l)"
+LINKFILE_COUNT="$(ls -l "$INPUT_PATH" | grep "^l" | wc -l)"
 
 echo "The number of files is "$FILE_COUNT""
 
