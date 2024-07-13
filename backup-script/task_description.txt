@@ -1,0 +1,13 @@
+Task Description
+
+In one of my previous assignments, I worked on a scenario where the application logs continuously populating on server directory and consuming more space.
+
+Under application SME's guidance, I proposed a solution by writing a script to make archive of older log files and moving to another location.
+
+There are two scripts which I have written here,
+
+1) First script is just a sample script which creates .log files in directory for demonstration purposes.
+
+2) Second script is the real script implemented which will make a archive, move archived file to a location & corresponding older logs will be deleted.
+
+In this way, we can achieve to take backup of older files and can use older log files if required.
