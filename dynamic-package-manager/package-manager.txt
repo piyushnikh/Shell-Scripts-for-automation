@@ -1,0 +1,4 @@
+###########################################Dynamic Package manager for RHEL#########################################
+
+This shell script can be used by system administrators to dynamically manage existing packages over RHEL systems. This script simply takes input from the user for the options to manage packages, 
+checks if the user is root or not & implements simple switch case statement to manage your system packages. This works perfectly on RHEL 9 based VM's.
