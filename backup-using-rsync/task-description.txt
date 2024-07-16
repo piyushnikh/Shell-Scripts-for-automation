@@ -20,3 +20,5 @@ Pre-requisistes :-
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/chap-managing_confined_services-rsync
 
 2) Achieved passwordless authentication between source & destination servers.
+
+3) Need to make sure that the destination server has the directory with correct permissions and owner setup.
