@@ -8,7 +8,7 @@ echo "Initializing backup for database........."
 
 sleep 5
 
-mysqldump -uroot -pH2e4m6A3NT@ --all-databases > $path/mysql_backup_$(backup_date).sql
+mysqldump -uroot -pH2e4m6A3NT@ --all-databases > $path/mysql_backup_"$(backup_date)".sql
 
 if [ "$?" -eq 0 ]; then
 
@@ -20,7 +20,7 @@ TO=piyushnikh@gmail.com
 
 BODY=Attached is the backup please check.
 
-echo "$BODY" | mailx -a /var/tmp/mysql_backup_$(backup_date).sql -s "$SUBJECT" -- $TO
+echo "$BODY" | mailx -a /var/tmp/mysql_backup_"$(backup_date)".sql -s "$SUBJECT" "$TO"
 
 else
 
