@@ -24,7 +24,7 @@ for SERVER in "${servers[@]}"
 
 do
 
-ssh piyush@"$server" "$COMMAND"
+ssh piyush@"$SERVER" "$COMMAND"
 
 sleep 3
 
