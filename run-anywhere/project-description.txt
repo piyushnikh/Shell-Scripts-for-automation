@@ -1,22 +1,17 @@
 Goal:-
 
-The goal of this exercise is to create a shell script that executes a given command on multiple
-servers.
+The goal of this exercise is to create a shell script that executes a given command or a script on multiple servers.
 
 Scenario:-
 
-The number of systems you manage is growing and you need a way to quickly execute the exact
-same command on all of your systems. Because it takes too much of your time to type the same
-command on every single system you manage, you decide to write a script that will do this for you.
+The number of systems you manage is growing and you need a way to quickly execute the exact same command on all of your systems. Because it takes too much of your time to type the same command/script on every single system you manage, you decide to write a script that will do this for you.
 
 Pseudocode :-
 
-# List of servers from file. This can be hosts file or any file having server I/P addresses.
+# List of servers IP addresses in a form of an array in the script.
 
 # Make sure that script not executed with root.
 
 # Make sure the user provides the file argument.
 
-# Initialize command variable.
-
-# Loop through SERVER_LIST.
+# Use FOR Loop to navigate through the server IP addreses and then execute command or script.
