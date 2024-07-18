@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# List of servers from file. This can be hosts file or any file having server I/P addresses.
+# Array declaration the below IP addresses are not valid, just for demo purposes.
 
-SERVER_LIST="$(cat $1 | awk '{print $1}')"
+servers=("13.201.135.240" "65.2.128.109" "15.206.70.149")
 
 # Make sure that script not executed with root
 
@@ -14,28 +14,18 @@ exit 1
 
 fi
 
-# Make sure the user provides the file argument
-
-if [ "$#" -eq 0 ]; then
-
-echo "Please provide file which has server names" >&2
-
-exit 1
-
-fi
-
 # Initialize command variable
 
-COMMAND="$2"
+COMMAND="$1"
 
 # Loop through SERVER_LIST
 
-for SERVER in "$SERVER_LIST"
+for SERVER in "${servers[@]}"
 
 do
 
-OUTPUT="$(ssh $(id -un)@$SERVER $COMMAND)"
+ssh piyush@"$server" "$COMMAND"
 
-echo "$OUTPUT"
+sleep 3
 
 done
