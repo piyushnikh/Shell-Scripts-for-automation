@@ -1,0 +1,1 @@
+This shell script can be handy to to healthcheck on remote servers. It implements shell script functions which helps to retrieve information like OS version, CPU load average, free memory etc. Just we need to make sure that this script is presenton remote servers with proper permissions.
